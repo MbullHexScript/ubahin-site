@@ -14,8 +14,8 @@ masuk repository. Tidak ada dependency runtime atau layanan konversi web.
   terang/gelap, FAQ, navigasi anchor, persistensi tema dan keyboard disclosure lulus.
 - Salin perintah npm: status Perintah disalin; console error kosong.
 - Screenshot lokal docs/qa/ sengaja tidak dipush.
-- Unduhan dipetakan ke GitHub Releases v1.0.0. Integritas aset diperiksa
-  terpisah saat unggahan, sebelum draft menjadi rilis publik.
+- Rilis GitHub v1.0.0 sudah publik dengan 11 aset. Ukuran dan SHA-256
+  server cocok setelah unggahan; seluruh URL aset dapat diakses tanpa login.
 
 ## Deployment
 
