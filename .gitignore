@@ -1,0 +1,12 @@
+node_modules/
+dist/
+dist-site/
+.cache/
+.vercel/
+.env
+.env.*
+docs/qa/
+*.log
+*.exe
+*.zip
+*.tgz

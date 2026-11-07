@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Ubahin, konverter file desktop gratis untuk Windows 11. Ubah gambar, PDF, audio, dan video secara lokal, tanpa akun atau unggahan file."
+    />
+    <meta name="theme-color" content="#f7f9fc" />
+    <title>Ubahin — Beda format? Ubahin aja.</title>
+    <link rel="icon" type="image/svg+xml" href="assets/mark.svg" />
+    <link
+      rel="preload"
+      href="assets/geist.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#utama">Lewati ke konten</a>
+    <header class="header">
+      <a class="wordmark" href="#utama" aria-label="Ubahin, beranda"
+        ><img src="assets/mark.svg" width="36" height="36" alt="" />ubahin<span
+          class="brand-dot"
+          >.</span
+        ></a
+      >
+      <nav aria-label="Navigasi utama">
+        <a href="#format">Format</a><a href="#panduan">Panduan</a
+        ><a href="#rilis">Catatan rilis</a>
+      </nav>
+      <div class="header-actions">
+        <button
+          id="theme"
+          class="theme"
+          hidden
+          aria-label="Gunakan tema gelap"
+          title="Ganti tema"
+        >
+          <span aria-hidden="true">◐</span></button
+        ><a class="button small" href="#unduh">Unduh gratis</a>
+      </div>
+    </header>
+    <main id="utama">
+      <section class="hero wrap" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="availability">
+            <span aria-hidden="true"></span> Ubahin 1.0 untuk Windows
+          </p>
+          <h1 id="hero-title">Beda format?<br />Ubahin aja.</h1>
+          <p class="intro">
+            Gambar, PDF, audio, sampai video.<br class="wide-only" />
+            Ubah dalam satu aplikasi, langsung di komputer kamu.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#unduh"
+              ><svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5" /></svg
+              >Unduh untuk Windows</a
+            ><a class="text-link" href="#panduan">Lihat cara pakainya</a>
+          </div>
+          <p class="hero-note">Gratis. Tanpa akun. File tetap di komputermu.</p>
+        </div>
+        <figure
+          class="conversion-art"
+          aria-label="Ilustrasi perubahan format gambar PNG menjadi WebP"
+        >
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="glass-file file-back">
+            <span class="file-label">PNG</span>
+            <div class="landscape">
+              <span class="sun"></span><span class="mountain one"></span
+              ><span class="mountain two"></span>
+            </div>
+            <span class="file-line"></span><span class="file-line short"></span>
+          </div>
+          <div class="glass-file file-front">
+            <span class="file-label">WebP</span>
+            <div class="landscape">
+              <span class="sun"></span><span class="mountain one"></span
+              ><span class="mountain two"></span>
+            </div>
+            <span class="file-line"></span><span class="file-line short"></span>
+          </div>
+          <div class="transform-token">
+            <img src="assets/mark.svg" width="68" height="68" alt="" />
+          </div>
+          <figcaption>
+            <span class="check" aria-hidden="true">✓</span> Format baru. File
+            asli tetap utuh.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="principles wrap" aria-label="Keunggulan Ubahin">
+        <div>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 10V7a5 5 0 0 1 10 0v3M5 10h14v11H5zM12 14v3" />
+          </svg>
+          <h2>Privat, dari awal.</h2>
+          <p>Konversi lokal. File kamu tidak diunggah ke server.</p>
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 7h18v14H3zM6 3h12M6 11h12M6 15h7" />
+          </svg>
+          <h2>Sekalian, satu antrean.</h2>
+          <p>Campurkan beberapa jenis file. Pilih tujuan tiap kategori.</p>
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 4h10v6h4L12 21 3 10h4z" />
+          </svg>
+          <h2>Hasil punya tempatnya.</h2>
+          <p>Tentukan folder hasil. File sumber tidak ditimpa diam-diam.</p>
+        </div>
+      </section>
+
+      <section
+        class="formats wrap section"
+        id="format"
+        aria-labelledby="formats-title"
+      >
+        <div class="section-heading">
+          <h2 id="formats-title">Banyak format.<br />Satu tempat.</h2>
+          <p>
+            Pilih tujuan yang cocok dengan filemu.<br />Ubahin menampilkan
+            pilihan yang bisa diproses.
+          </p>
+        </div>
+        <div class="format-list">
+          <article>
+            <div class="category-icon blue" aria-hidden="true">
+              <span>IMG</span>
+            </div>
+            <div>
+              <h3>Gambar & ikon</h3>
+              <p>PNG, JPG, WebP, BMP, dan ICO</p>
+            </div>
+            <p class="target">
+              Ke PNG, JPG, WebP, ICO atau PDF <small>Sesuai jenis input</small>
+            </p>
+          </article>
+          <article>
+            <div class="category-icon coral" aria-hidden="true">
+              <span>PDF</span>
+            </div>
+            <div>
+              <h3>PDF</h3>
+              <p>Dari dokumen ke gambar per halaman</p>
+            </div>
+            <p class="target">
+              Ke PNG atau JPG <small>Semua halaman, berurutan</small>
+            </p>
+          </article>
+          <article>
+            <div class="category-icon lilac" aria-hidden="true">
+              <span>AUD</span>
+            </div>
+            <div>
+              <h3>Audio</h3>
+              <p>MP3, WAV, FLAC, dan M4A</p>
+            </div>
+            <p class="target">
+              Ke MP3, WAV atau FLAC <small>Codec input harus didukung</small>
+            </p>
+          </article>
+          <article>
+            <div class="category-icon mint" aria-hidden="true">
+              <span>VID</span>
+            </div>
+            <div>
+              <h3>Video</h3>
+              <p>MP4, MOV, MKV, dan WebM</p>
+            </div>
+            <p class="target">
+              Ke MP4 atau WebM <small>Ekstrak MP3/WAV jika ada audio</small>
+            </p>
+          </article>
+          <article>
+            <div class="category-icon slate" aria-hidden="true">
+              <span>DOC</span>
+            </div>
+            <div>
+              <h3>Dokumen Office <span class="tag">Opsional</span></h3>
+              <p>DOCX, XLSX, PPTX, ODT, ODS, dan ODP</p>
+            </div>
+            <p class="target">
+              Ke PDF <small>Perlu LibreOffice eksternal</small>
+            </p>
+          </article>
+        </div>
+        <p class="fine-print">
+          Dukungan mengikuti isi dan codec file. HEIC, AVIF, SVG, arsip ZIP,
+          OCR, dan PDF ke Word belum tersedia. Tata letak Office dapat berbeda;
+          periksa hasilnya sebelum digunakan.
+        </p>
+      </section>
+
+      <section class="how section" id="panduan" aria-labelledby="how-title">
+        <div class="wrap">
+          <div class="section-heading">
+            <h2 id="how-title">Dari file ke hasil,<br />tanpa berbelit.</h2>
+            <a
+              class="text-link"
+              href="https://github.com/MbullHexScript/ubahin-site/releases/download/v1.0.0/PANDUAN-1.0.md"
+              download
+              >Unduh panduan lengkap</a
+            >
+          </div>
+          <ol class="steps">
+            <li>
+              <span class="step-number">1</span>
+              <h3>Tambahkan file</h3>
+              <p>
+                Tarik ke aplikasi, pilih beberapa file, atau tambahkan satu
+                folder.
+              </p>
+            </li>
+            <li>
+              <span class="step-number">2</span>
+              <h3>Pilih format tujuan</h3>
+              <p>
+                Atur format dan mutu tiap kategori, lalu pilih folder hasil.
+              </p>
+            </li>
+            <li>
+              <span class="step-number">3</span>
+              <h3>Ubahin, lalu buka hasil</h3>
+              <p>
+                Pantau antrean, batalkan jika perlu, atau ulangi file yang
+                gagal.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section
+        class="download-section wrap section"
+        id="unduh"
+        aria-labelledby="download-title"
+      >
+        <div class="download-card">
+          <img
+            class="download-logo"
+            src="assets/mark.svg"
+            width="78"
+            height="78"
+            alt=""
+          />
+          <h2 id="download-title">Siap ubah file pertamamu?</h2>
+          <p>Ubahin 1.0.0 untuk Windows 11 x64.</p>
+          <a
+            class="button download-button"
+            href="https://github.com/MbullHexScript/ubahin-site/releases/download/v1.0.0/Ubahin-1.0.0-Setup-x64.exe"
+            download
+            >Unduh Ubahin <span class="button-meta">53,87 MiB</span></a
+          >
+          <p class="download-caption">
+            Installer .exe • Gratis digunakan dan dibagikan
+          </p>
+          <div class="requirements">
+            <p>
+              <strong>Sebelum memasang</strong><br />Memerlukan Microsoft Edge
+              WebView2. Jika belum tersedia, pemasangan runtime memerlukan
+              internet. Konversi sesudahnya tetap lokal.
+            </p>
+            <p>
+              <strong>Informasi keamanan Windows</strong><br />Installer belum
+              ditandatangani. Windows mungkin menampilkan peringatan atau
+              memblokirnya. Jangan menonaktifkan perlindungan Windows.
+            </p>
+          </div>
+          <a
+            class="text-link"
+            href="https://github.com/MbullHexScript/ubahin-site/releases/download/v1.0.0/SHA256SUMS.txt"
+            >Lihat checksum SHA-256</a
+          >
+        </div>
+        <div class="download-extras">
+          <details>
+            <summary>Alternatif pemasangan melalui npm</summary>
+            <p>
+              Untuk pengguna Node.js 22.19–22.x. Unduh
+              <a
+                href="https://github.com/MbullHexScript/ubahin-site/releases/download/v1.0.0/ubahin-desktop-installer-1.0.0.tgz"
+                download
+                >paket bridge npm</a
+              >
+              dan installer di atas ke folder yang sama, lalu jalankan dari
+              folder itu:
+            </p>
+            <pre><code id="npm-command">npm install -g ./ubahin-desktop-installer-1.0.0.tgz
+ubahin-install --installer ./Ubahin-1.0.0-Setup-x64.exe</code></pre>
+            <button class="copy" id="copy-command" hidden>Salin perintah</button
+            ><span id="copy-status" role="status"></span>
+            <p>
+              Bridge memverifikasi installer dan membuka wizard Windows.
+              Konversi tetap melalui GUI. Belum ada paket registry publik.
+              Menghapus paket npm tidak menghapus aplikasi desktop.
+            </p>
+          </details>
+          <details>
+            <summary>Lisensi & sumber komponen pihak ketiga</summary>
+            <p>
+              Ubahin gratis dipakai dan dibagikan; kode asli aplikasi tetap
+              privat. Hak komponen pihak ketiga mengikuti lisensinya sendiri.
+            </p>
+            <ul>
+              <li>
+                <a
+                  href="https://github.com/MbullHexScript/ubahin-site/releases/download/v1.0.0/LICENSE.txt"
+                  >Izin penggunaan Ubahin</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/MbullHexScript/ubahin-site/releases/download/v1.0.0/THIRD-PARTY-NOTICES.md"
+                  >Notices komponen pihak ketiga</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/MbullHexScript/ubahin-site/releases/download/v1.0.0/THIRD-PARTY-SOURCES.txt"
+                  >Petunjuk sumber dan rebuild</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/MbullHexScript/ubahin-site/releases/tag/v1.0.0"
+                  >Sumber komponen pihak ketiga (2 bagian, total 2,13 GiB)</a
+                >
+              </li>
+            </ul>
+            <p>
+              Kamu cukup mengunduh installer untuk memakai Ubahin. Jika
+              membagikannya kembali, sediakan juga izin, notices, checksum, dan
+              tautan arsip sumber di halaman rilis yang sama. Petunjuk penyatuan
+              arsip sumber disertakan pada rilis.
+            </p>
+          </details>
+        </div>
+      </section>
+
+      <section class="help wrap section" aria-labelledby="help-title">
+        <div>
+          <h2 id="help-title">Ada yang ingin <br />kamu tahu?</h2>
+          <p>Hal kecil sebelum mulai.</p>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>Apakah file saya dikirim ke internet?</summary>
+            <p>
+              Tidak. Aplikasi desktop mengonversi file secara lokal, tanpa akun
+              dan tanpa unggahan. Internet mungkin diperlukan saat memasang
+              WebView2 yang belum tersedia.
+            </p>
+          </details>
+          <details>
+            <summary>Apakah bisa mengubah semua format?</summary>
+            <p>
+              Belum. Format dan codec yang didukung tercantum di bagian Format.
+              File terenkripsi, macro Office, format lama DOC/XLS/PPT, dan
+              beberapa isi dokumen aktif ditolak. Ubahin memberi alasan ketika
+              file tidak dapat diproses.
+            </p>
+          </details>
+          <details>
+            <summary>Bagaimana dengan Windows 10 dan ARM?</summary>
+            <p>
+              Rilis pertama diuji untuk Windows 11 x64. Windows 10 dan ARM64
+              belum diklaim teruji atau didukung.
+            </p>
+          </details>
+          <details>
+            <summary>Bagaimana memperbarui atau menghapus aplikasi?</summary>
+            <p>
+              Pasang pembaruan dari installer baru yang dibagikan pengembang.
+              Belum ada update otomatis. Untuk menghapus, buka Pengaturan
+              Windows → Aplikasi → Ubahin. Simpan hasil konversi di folder
+              milikmu dan perhatikan pilihan hapus data di wizard.
+            </p>
+          </details>
+          <details>
+            <summary>Ada file yang gagal dikonversi?</summary>
+            <p>
+              Catat versi Ubahin, langkah kejadian, format, dan pesan
+              kesalahannya saat melapor ke pengembang di komunitas tempat kamu
+              mendapatkan aplikasi. Gunakan file contoh sintetis, bukan dokumen
+              pribadi.
+            </p>
+          </details>
+        </div>
+      </section>
+
+      <section
+        class="release wrap section"
+        id="rilis"
+        aria-labelledby="release-title"
+      >
+        <h2 id="release-title">Catatan rilis</h2>
+        <article>
+          <div>
+            <span class="release-version">1.0.0</span>
+            <p>Rilis pertama</p>
+          </div>
+          <div>
+            <h3>File berbeda, alur yang sama.</h3>
+            <p>
+              Konversi gambar, ikon, PDF, audio dan video. Antrean campuran,
+              cancel/retry, riwayat lokal, tema terang/gelap, serta Office ke
+              PDF melalui LibreOffice opsional.
+            </p>
+            <p class="muted">
+              Dukungan awal Windows 11 x64. Installer unsigned. Pembaruan
+              berikutnya akan mengikuti masukan pengguna.
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <section
+        class="privacy wrap section"
+        id="privasi"
+        aria-labelledby="privacy-title"
+      >
+        <div>
+          <h2 id="privacy-title">Privasi yang sederhana.</h2>
+          <p>
+            Aplikasi menyimpan preferensi dan riwayat minimal secara lokal,
+            maksimal 50 batch. Menghapus riwayat tidak menghapus hasil. Folder
+            dan profil Windows tidak dienkripsi oleh Ubahin.
+          </p>
+        </div>
+        <div>
+          <h3>Di website ini</h3>
+          <p>
+            Tidak ada unggahan file, akun, analitik, atau font pihak ketiga yang
+            dimuat jarak jauh. Pilihan tema disimpan di browser. Saat website
+            diterbitkan, penyedia hosting dapat mencatat permintaan akses sesuai
+            kebijakannya.
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer class="wrap">
+      <div>
+        <a class="wordmark" href="#utama"
+          ><img src="assets/mark.svg" width="32" height="32" alt="" />ubahin.</a
+        >
+        <p>Dibuat oleh NaufalNyaa.<br />Beda format? Ubahin aja.</p>
+      </div>
+      <nav aria-label="Navigasi footer">
+        <a href="#unduh">Unduhan</a><a href="#panduan">Panduan</a
+        ><a href="#privasi">Privasi</a
+        ><a
+          href="https://github.com/MbullHexScript/ubahin-site/releases/download/v1.0.0/LICENSE.txt"
+          >Lisensi</a
+        >
+      </nav>
+      <p class="copyright">© 2026 NaufalNyaa</p>
+    </footer>
+  </body>
+</html>

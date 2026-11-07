@@ -1,0 +1,6 @@
+.git
+docs
+dist
+dist-site
+.cache
+node_modules
