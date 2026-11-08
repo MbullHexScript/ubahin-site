@@ -18,12 +18,14 @@ export default function Hero() {
           Ubahin aja.
         </h1>
 
+
         <p className="intro">
-          Gambar, PDF, audio, sampai video.
-          <br className="wide-only" />
-          Ubah dalam satu aplikasi, langsung di
-          komputer kamu.
+        Gambar, PDF, audio, sampai video.
+        <br className="wide-only" />{" "}
+        Ubah dalam satu aplikasi, langsung di
+        komputer kamu.
         </p>
+
 
         <div className="hero-actions">
           <a className="button" href="#unduh">
