@@ -1,0 +1,11 @@
+
+/* Tailwind CSS v4 — Ubahin 2.0 */
+
+/* Tetapkan urutan CSS layers */
+@layer theme, base, components, utilities;
+
+/* Default theme variables Tailwind */
+@import "tailwindcss/theme.css" layer(theme);
+
+/* Utility classes tanpa Preflight */
+@import "tailwindcss/utilities.css" layer(utilities);

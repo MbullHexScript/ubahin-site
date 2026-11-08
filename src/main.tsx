@@ -13,6 +13,7 @@ import ReleaseNotes from "./components/ReleaseNotes";
 import Privacy from "./components/Privacy";
 import Footer from "./components/Footer";
 
+import "./tailwind.css";
 import "./styles.css";
 
 function App() {
