@@ -1,4 +1,5 @@
 
+import logoUrl from "../assets/mark.svg";
 export default function Hero() {
   return (
     <section
@@ -80,7 +81,7 @@ export default function Hero() {
 
         <div className="transform-token">
           <img
-            src="/assets/mark.svg"
+            src={logoUrl}
             width={68}
             height={68}
             alt=""

@@ -1,5 +1,6 @@
 
 import { useEffect, useState } from "react";
+import logoUrl from "../assets/mark.svg";
 
 type Theme = "light" | "dark" | null;
 
@@ -68,12 +69,14 @@ export default function Navbar() {
           href="#utama"
           aria-label="Ubahin, beranda"
         >
-          <img
-            src="/assets/mark.svg"
-            width="36"
-            height="36"
-            alt=""
-          />
+
+        <img
+        src={logoUrl}
+        width="36"
+        height="36"
+        alt=""
+        />
+
           ubahin<span className="brand-dot">.</span>
         </a>
 

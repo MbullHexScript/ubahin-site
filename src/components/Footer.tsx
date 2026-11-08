@@ -1,4 +1,6 @@
 
+import logoUrl from "../assets/mark.svg";
+
 const RELEASE_URL =
   "https://github.com/MbullHexScript/ubahin-site/releases/download/v1.0.0";
 
@@ -12,7 +14,7 @@ export default function Footer() {
           aria-label="Ubahin, kembali ke atas"
         >
           <img
-            src="/assets/mark.svg"
+            src={logoUrl}
             width={32}
             height={32}
             alt=""

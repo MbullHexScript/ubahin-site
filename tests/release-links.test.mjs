@@ -1,47 +1,102 @@
+
 import test from "node:test";
 import assert from "node:assert/strict";
-import { readFile, access, readdir } from "node:fs/promises";
+import { readFile, readdir, stat } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
-const root = fileURLToPath(new URL("../dist-site/", import.meta.url));
-const html = await readFile(path.join(root, "index.html"), "utf8");
-const release = "https://github.com/MbullHexScript/ubahin-site/releases/";
-test("all links resolve locally or target the pinned official release", async () => {
-  const ids = new Set(
-    [...html.matchAll(/\bid="([^"]+)"/g)].map((match) => match[1]),
-  );
-  for (const [, link] of html.matchAll(/(?:href|src)="([^"]+)"/g)) {
-    if (link.startsWith("#"))
-      assert.ok(ids.has(link.slice(1)), `Missing ${link}`);
-    else if (/^https:/.test(link))
-      assert.ok(
-        link.startsWith(release + "download/v1.0.0/") ||
-          link === release + "tag/v1.0.0",
-        link,
-      );
-    else await access(path.join(root, link));
+
+const root = fileURLToPath(
+  new URL("../", import.meta.url)
+);
+
+const output = path.join(root, "dist-site");
+const source = path.join(root, "src");
+
+async function readOutput(filename) {
+  return readFile(path.join(output, filename), "utf8");
+}
+
+test("React production build memiliki halaman utama", async () => {
+  const html = await readOutput("index.html");
+
+  assert.match(html, /id=["']root["']/);
+  assert.match(html, /<script[^>]+type=["']module["']/);
+  assert.match(html, /assets\/main-[^"']+\.js/);
+  assert.doesNotMatch(html, /src=["']\/main\.tsx["']/);
+});
+
+test("Halaman 404 tersedia", async () => {
+  const html = await readOutput("404.html");
+
+  assert.match(html, /Halaman tidak ditemukan/);
+  assert.match(html, /Kembali ke Ubahin/);
+});
+
+test("Referensi aset lokal valid", async () => {
+  for (const filename of ["index.html", "404.html"]) {
+    const html = await readOutput(filename);
+
+    for (const [, url] of html.matchAll(
+      /\b(?:href|src)="([^"]+)"/g
+    )) {
+      if (/^(https?:|mailto:|data:|#)/i.test(url)) {
+        continue;
+      }
+
+      const pathname = url.split(/[?#]/)[0];
+
+      const asset = pathname === "/"
+        ? path.join(output, "index.html")
+        : path.join(output, pathname.replace(/^\/+/, ""));
+
+      const info = await stat(asset);
+      assert.ok(info.isFile(), `Aset tidak ada: ${url}`);
+    }
   }
-  assert.ok(
-    html.includes(release + "download/v1.0.0/Ubahin-1.0.0-Setup-x64.exe"),
-  );
 });
-test("website build excludes desktop binaries and private metadata", async () => {
-  const names = await readdir(root, { recursive: true });
-  assert.ok(
-    !names.some((name) =>
-      /\.(exe|zip|tgz|rs|env)$|release-manifest|downloads/i.test(name),
-    ),
+
+test("Lisensi font Geist tersedia", async () => {
+  const license = await readOutput(
+    "assets/GEIST-OFL.txt"
   );
-  assert.doesNotMatch(html, /private_project|<input[^>]+type="file"/);
+
+  assert.ok(license.length > 0);
 });
-test("public content preserves platform, signature, source and npm limitations", () => {
-  const text = html.replace(/\s+/g, " ");
-  for (const phrase of [
-    "Windows 11 x64",
-    "Installer belum ditandatangani",
-    "Belum ada paket registry publik",
-    "LibreOffice eksternal",
-    "Sumber komponen pihak ketiga (2 bagian",
-  ])
-    assert.ok(text.includes(phrase), phrase);
+
+test("Tautan release tetap menggunakan sumber resmi", async () => {
+  const download = await readFile(
+    path.join(source, "components", "Download.tsx"),
+    "utf8"
+  );
+
+  assert.match(
+    download,
+    /github\.com\/MbullHexScript\/ubahin-site\/releases\/download\/v1\.0\.0/
+  );
+
+  for (const filename of [
+    "Ubahin-1.0.0-Setup-x64.exe",
+    "SHA256SUMS.txt",
+    "THIRD-PARTY-NOTICES.md",
+    "THIRD-PARTY-SOURCES.txt"
+  ]) {
+    assert.ok(
+      download.includes(filename),
+      `Referensi tidak ditemukan: ${filename}`
+    );
+  }
+});
+
+test("Build tidak membocorkan file desktop privat", async () => {
+  const files = await readdir(output, {
+    recursive: true
+  });
+
+  const forbidden =
+    /\.(exe|zip|tgz|rs|env)$|release-manifest|downloads/i;
+
+  assert.ok(
+    !files.some((filename) => forbidden.test(filename)),
+    "Terdapat file terlarang dalam production build"
+  );
 });

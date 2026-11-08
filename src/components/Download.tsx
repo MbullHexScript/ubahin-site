@@ -1,5 +1,6 @@
 
 import { useEffect, useState } from "react";
+import logoUrl from "../assets/mark.svg";
 
 const RELEASE =
   "https://github.com/MbullHexScript/ubahin-site/releases/download/v1.0.0";
@@ -42,9 +43,9 @@ export default function Download() {
       <div className="download-card">
         <img
           className="download-logo"
-          src="/assets/mark.svg"
-          width="78"
-          height="78"
+          src={logoUrl}
+          width={78}
+          height={78}
           alt=""
         />
 
