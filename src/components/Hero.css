@@ -1,0 +1,834 @@
+
+/* UBAHIN 2.0 — GRADIENT HERO */
+
+.ub-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: 100%;
+  min-height: 850px;
+
+  /* Background extends behind floating navbar */
+  margin-top: -104px;
+  padding: 195px 24px 100px;
+
+  background: linear-gradient(
+    180deg,
+    #070914 0%,
+    #0b1020 78%,
+    var(--bg) 100%
+  );
+
+  color: #f8faff;
+}
+
+/* Gradient Aurora */
+
+.ub-hero-aurora {
+  position: absolute;
+  z-index: -2;
+  top: -200px;
+  left: 50%;
+
+  width: 1400px;
+  height: 680px;
+
+  transform: translateX(-50%);
+  filter: blur(75px);
+  opacity: 0.8;
+  pointer-events: none;
+
+  animation: ub-aurora-drift 14s ease-in-out infinite alternate;
+}
+
+.ub-hero-glow {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+}
+
+.glow-purple {
+  width: 850px;
+  height: 350px;
+  top: 30px;
+  right: -80px;
+
+  background: linear-gradient(
+    135deg,
+    #6c36ef,
+    #453fee,
+    #0f92d1
+  );
+}
+
+.glow-pink {
+  width: 950px;
+  height: 260px;
+  top: 155px;
+  right: -280px;
+
+  background: linear-gradient(
+    100deg,
+    #db279b,
+    #8741dc,
+    #d98a43
+  );
+
+  opacity: 0.75;
+}
+
+.glow-blue {
+  width: 750px;
+  height: 320px;
+  top: 285px;
+  right: 190px;
+
+  background: linear-gradient(
+    120deg,
+    #143eb5,
+    #16a2cf,
+    #7770e8
+  );
+
+  opacity: 0.55;
+}
+
+/* Gentle grain */
+
+.ub-hero-noise {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.12;
+
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E");
+}
+
+/* Content */
+
+.ub-hero-content {
+  position: relative;
+  z-index: 1;
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ub-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+
+  padding: 10px 17px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.09);
+  color: #f3f5ff;
+
+  font-size: 0.82rem;
+  font-weight: 520;
+  text-decoration: none;
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  transition:
+    background 220ms ease,
+    transform 220ms ease;
+}
+
+.ub-hero-badge:hover {
+  background: rgba(255, 255, 255, 0.16);
+  transform: translateY(-2px);
+}
+
+.ub-hero-status {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #6ce2b0;
+  box-shadow: 0 0 0 4px rgba(108, 226, 176, 0.13);
+}
+
+.ub-hero h1 {
+  max-width: 950px;
+  margin: 38px auto 0;
+
+  color: #ffffff;
+  font-size: clamp(3.8rem, 7.8vw, 7rem);
+  font-weight: 680;
+  letter-spacing: -0.078em;
+  line-height: 1.04;
+}
+
+.ub-hero h1 span {
+  display: block;
+
+  background: linear-gradient(
+    110deg,
+    #ffffff 15%,
+    #d7d9ff 50%,
+    #91c9ff 90%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ub-hero-description {
+  max-width: 650px;
+  margin: 28px auto 0;
+
+  color: #c4cce0;
+  font-size: clamp(1rem, 2vw, 1.18rem);
+  line-height: 1.8;
+}
+
+/* Buttons */
+
+.ub-hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.ub-hero-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+
+  min-height: 52px;
+  padding: 13px 25px;
+
+  border: 1px solid transparent;
+  border-radius: 999px;
+
+  font-size: 0.94rem;
+  font-weight: 610;
+  text-decoration: none;
+
+  transition:
+    transform 220ms ease,
+    background 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.ub-hero-btn svg {
+  width: 19px;
+  height: 19px;
+}
+
+.ub-hero-btn:hover {
+  transform: translateY(-3px);
+}
+
+.ub-hero-btn-primary {
+  background: #ffffff;
+  color: #161b2d;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+.ub-hero-btn-primary:hover {
+  background: #edf0ff;
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.25);
+}
+
+.ub-hero-btn-outline {
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.07);
+  color: #ffffff;
+  backdrop-filter: blur(14px);
+}
+
+.ub-hero-btn-outline:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.ub-hero-note {
+  margin-top: 20px;
+  color: #a7b2ce;
+  font-size: 0.79rem;
+}
+
+/* Large Product Showcase */
+
+.ub-hero-showcase {
+  position: relative;
+  width: min(960px, 100%);
+  margin: 76px auto 0;
+}
+
+.ub-hero-showcase-glow {
+  position: absolute;
+  inset: 10% 5%;
+  z-index: -1;
+
+  background: linear-gradient(
+    100deg,
+    #493ab8,
+    #3389bb,
+    #ce4da8
+  );
+
+  opacity: 0.45;
+  filter: blur(95px);
+  border-radius: 50%;
+}
+
+.ub-hero-preview {
+  position: relative;
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 27px;
+
+  background: linear-gradient(
+    145deg,
+    rgba(250, 251, 255, 0.17),
+    rgba(154, 171, 222, 0.08)
+  );
+
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+
+  box-shadow:
+    0 30px 90px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+.ub-hero-preview-header,
+.ub-hero-preview-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  min-height: 58px;
+  padding: 15px 25px;
+  color: #cbd4e9;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+}
+
+.ub-hero-preview-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.ub-hero-preview-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.ub-hero-window-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.ub-hero-window-dots i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.ub-hero-online,
+.ub-hero-success {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ub-hero-online > span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #6ce2b0;
+}
+
+.ub-hero-success > span {
+  color: #6ce2b0;
+  font-weight: 700;
+}
+
+/* File conversion illustration */
+
+.ub-hero-preview-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(18px, 5vw, 65px);
+
+  min-height: 390px;
+  padding: 45px 28px;
+}
+
+.ub-hero-file {
+  width: clamp(170px, 26vw, 235px);
+  padding: 20px;
+
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 22px;
+
+  box-shadow:
+    0 18px 50px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+
+  transition: transform 300ms ease;
+}
+
+.ub-hero-file-input {
+  color: #465b92;
+  background: linear-gradient(145deg, #eae9fa, #c8d9f3);
+  transform: rotate(-7deg);
+}
+
+.ub-hero-file-output {
+  color: #3a736c;
+  background: linear-gradient(145deg, #e6fff4, #b7dfde);
+  transform: rotate(7deg);
+}
+
+.ub-hero-file-input:hover {
+  transform: rotate(-3deg) translateY(-7px);
+}
+
+.ub-hero-file-output:hover {
+  transform: rotate(3deg) translateY(-7px);
+}
+
+.ub-hero-file-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+}
+
+.ub-hero-file-heading > span {
+  font-size: 1.4rem;
+  font-weight: 750;
+  letter-spacing: -0.06em;
+}
+
+.ub-hero-file-heading small {
+  font-size: 0.65rem;
+  opacity: 0.75;
+}
+
+.ub-hero-landscape {
+  position: relative;
+  height: 120px;
+  overflow: hidden;
+  margin: 18px 0;
+  border-radius: 12px;
+
+  background: linear-gradient(#a9d5ea, #dcecf2);
+}
+
+.ub-hero-file-output .ub-hero-landscape {
+  background: linear-gradient(#9cd9d6, #ddf2e6);
+}
+
+.ub-hero-sun {
+  position: absolute;
+  top: 20px;
+  right: 26px;
+
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #fff8d1;
+}
+
+.ub-hero-mountain {
+  position: absolute;
+  bottom: -65px;
+  width: 125px;
+  height: 125px;
+  transform: rotate(45deg);
+  border-radius: 15px;
+}
+
+.ub-hero-mountain.mountain-one {
+  left: -20px;
+  background: #85adbf;
+}
+
+.ub-hero-mountain.mountain-two {
+  right: -24px;
+  bottom: -78px;
+  background: #9fc5c4;
+}
+
+.ub-hero-file-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ub-hero-file-lines span {
+  width: 80%;
+  height: 6px;
+  border-radius: 99px;
+  background: currentColor;
+  opacity: 0.15;
+}
+
+.ub-hero-file-lines span:last-child {
+  width: 50%;
+}
+
+.ub-hero-convert-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+
+  color: #e9eeff;
+  font-size: 2rem;
+}
+
+.ub-hero-convert-icon img {
+  width: 62px;
+  height: 62px;
+  padding: 8px;
+
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.92);
+
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Motion */
+
+@keyframes ub-aurora-drift {
+  from {
+    transform: translateX(-50%) translateY(0) rotate(-3deg);
+  }
+
+  to {
+    transform: translateX(-50%) translateY(55px) rotate(5deg);
+  }
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .ub-hero {
+    margin-top: -95px;
+    padding-top: 158px;
+    padding-bottom: 75px;
+  }
+
+  .ub-hero h1 {
+    font-size: clamp(3.1rem, 9vw, 4.8rem);
+    letter-spacing: -0.065em;
+  }
+
+  .ub-hero-showcase {
+    margin-top: 55px;
+  }
+
+  .ub-hero-preview-body {
+    min-height: 300px;
+    gap: 24px;
+  }
+
+  .ub-hero-file {
+    padding: 14px;
+  }
+
+  .ub-hero-landscape {
+    height: 90px;
+  }
+}
+
+@media (max-width: 600px) {
+  .ub-hero {
+    padding-inline: 20px;
+    padding-top: 148px;
+    padding-bottom: 55px;
+    margin-top: -84px;
+    min-height: auto;
+  }
+
+  .ub-hero-aurora {
+    opacity: 0.65;
+    left: 65%;
+  }
+
+  .ub-hero h1 {
+    margin-top: 30px;
+    font-size: clamp(2.7rem, 10.2vw, 3.8rem);
+    line-height: 1.08;
+  }
+
+  .ub-hero-description {
+    margin-top: 22px;
+    font-size: 0.96rem;
+    line-height: 1.7;
+  }
+
+  .ub-hero-description br {
+    display: none;
+  }
+
+  .ub-hero-actions {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 28px;
+  }
+
+  .ub-hero-btn {
+    width: min(100%, 280px);
+  }
+
+  .ub-hero-showcase {
+    margin-top: 45px;
+  }
+
+  .ub-hero-preview {
+    border-radius: 19px;
+  }
+
+  .ub-hero-preview-header,
+  .ub-hero-preview-footer {
+    padding: 12px 14px;
+    font-size: 0.61rem;
+  }
+
+  .ub-hero-preview-body {
+    gap: 8px;
+    padding: 35px 12px;
+    min-height: 240px;
+  }
+
+  .ub-hero-file {
+    width: min(38%, 170px);
+    padding: 10px;
+    border-radius: 13px;
+  }
+
+  .ub-hero-file-heading > span {
+    font-size: 1rem;
+  }
+
+  .ub-hero-file-heading small {
+    display: none;
+  }
+
+  .ub-hero-landscape {
+    height: 70px;
+    margin: 10px 0;
+  }
+
+  .ub-hero-convert-icon {
+    gap: 5px;
+    font-size: 1.2rem;
+  }
+
+  .ub-hero-convert-icon img {
+    width: 35px;
+    height: 35px;
+    padding: 4px;
+    border-radius: 10px;
+  }
+
+  .ub-hero-file-lines span {
+    height: 4px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ub-hero-aurora {
+    animation: none;
+  }
+
+  .ub-hero *,
+  .ub-hero *::before,
+  .ub-hero *::after {
+    transition: none !important;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .ub-hero-preview,
+  .ub-hero-badge {
+    backdrop-filter: none;
+  }
+}
+
+
+/* =========================================
+   UBAHIN 2.0 — SMOOTH HERO OPTIMIZATION
+   ========================================= */
+
+/* 1. Hilangkan tekstur grain yang kasar */
+.ub-hero-noise {
+  display: none;
+}
+
+/* 2. Gunakan gradient statis tanpa blur besar */
+.ub-hero-aurora {
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 750px;
+
+  transform: none;
+  filter: none;
+  opacity: 1;
+  animation: none;
+
+  background:
+    radial-gradient(
+      ellipse 55% 65% at 72% 12%,
+      rgba(109, 69, 220, 0.45),
+      transparent 75%
+    ),
+    radial-gradient(
+      ellipse 45% 55% at 25% 35%,
+      rgba(24, 111, 196, 0.3),
+      transparent 75%
+    ),
+    radial-gradient(
+      ellipse 45% 50% at 82% 58%,
+      rgba(185, 67, 148, 0.2),
+      transparent 75%
+    );
+}
+
+/* 3. Nonaktifkan lapisan blur animasi lama */
+.ub-hero-glow {
+  display: none;
+}
+
+/* 4. Optimalkan cahaya belakang showcase */
+.ub-hero-showcase-glow {
+  inset: 0;
+  filter: none;
+  opacity: 0.28;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 45%,
+      rgba(91, 101, 230, 0.65),
+      transparent 70%
+    );
+}
+
+/* 5. Kurangi beban rendering kaca */
+.ub-hero-preview {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+/* 6. Pertahankan tampilan mobile */
+@media (max-width: 600px) {
+  .ub-hero-aurora {
+    left: 0;
+    width: 100%;
+    height: 600px;
+    opacity: 0.85;
+  }
+}
+
+
+/* ======================================
+   UBAHIN — ADAPTIVE HERO LIGHT THEME
+   ====================================== */
+
+:root[data-theme="light"] .ub-showcase-hero {
+  color: #1e293b;
+
+  background:
+    radial-gradient(
+      ellipse 65% 55% at 75% 8%,
+      rgba(120, 113, 228, 0.2),
+      transparent 75%
+    ),
+    radial-gradient(
+      ellipse 55% 48% at 20% 35%,
+      rgba(91, 166, 222, 0.13),
+      transparent 78%
+    ),
+    linear-gradient(
+      180deg,
+      #f8f9ff 0%,
+      #eef2fb 72%,
+      #f7f9fc 100%
+    );
+}
+
+/* Nonaktifkan gradient gelap */
+:root[data-theme="light"] .ub-showcase-backdrop {
+  display: none;
+}
+
+/* Headline */
+:root[data-theme="light"] .ub-showcase-hero h1 {
+  color: #1d273b;
+}
+
+:root[data-theme="light"] .ub-showcase-hero h1 span {
+  background: linear-gradient(
+    110deg,
+    #263963,
+    #5367bf 58%,
+    #7b91d8
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Teks */
+:root[data-theme="light"] .ub-showcase-hero p {
+  color: #52617a;
+}
+
+/* Badge versi */
+:root[data-theme="light"] .ub-showcase-hero a[href="#rilis"] {
+  color: #425477;
+  background: rgba(255, 255, 255, 0.65);
+  border-color: rgba(100, 120, 170, 0.18);
+}
+
+/* Tombol download */
+:root[data-theme="light"] .ub-showcase-hero a[href="#unduh"] {
+  color: #fff;
+  background: #5267c7;
+  border-color: transparent;
+}
+
+:root[data-theme="light"] .ub-showcase-hero a[href="#unduh"]:hover {
+  background: #4258b8;
+}
+
+/* Tombol panduan */
+:root[data-theme="light"] .ub-showcase-hero a[href="#panduan"] {
+  color: #263653;
+  background: rgba(255, 255, 255, 0.7);
+  border-color: rgba(100, 120, 170, 0.22);
+}
+
+/* Bingkai screenshot */
+:root[data-theme="light"] .ub-showcase-hero .ub-showcase-features > div {
+  color: #263653;
+  background: rgba(255, 255, 255, 0.65);
+  border-color: rgba(100, 120, 170, 0.16);
+  box-shadow: 0 5px 22px rgba(60, 80, 130, 0.04);
+}
+
+:root[data-theme="light"] .ub-showcase-features p {
+  color: #64748b;
+}
